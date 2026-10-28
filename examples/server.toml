@@ -1,0 +1,12 @@
+# 仅供本地演示：上线前更换密钥，并限制公网来源 IP。
+[server]
+host = "0.0.0.0"
+tcp_port = 9009
+udp_port = 9010
+handshake_timeout = 5
+heartbeat_idle_timeout = 10
+log_level = "INFO" # DEBUG、INFO、WARNING、ERROR 或 CRITICAL
+
+[clients]
+workstation = "replace-with-a-long-random-secret"
+laptop = "replace-with-another-long-random-secret"

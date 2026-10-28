@@ -1,0 +1,29 @@
+[client]
+id = "workstation"
+metrics_host = "127.0.0.1"
+metrics_port = 9108
+udp_interval = 1.0
+tcp_interval = 1.0
+udp_timeout = 2.0
+tcp_timeout = 2.0
+reconnect_interval = 1.0
+loss_window = 60.0
+log_level = "INFO" # DEBUG、INFO、WARNING、ERROR 或 CRITICAL
+
+[[servers]]
+name = "primary"
+host = "203.0.113.10" # 替换为真实公网服务器地址
+tcp_port = 9009
+udp_port = 9010
+secret = "replace-with-a-long-random-secret"
+tcp_connections = 3
+
+[[servers]]
+name = "backup"
+host = "198.51.100.10"
+tcp_port = 9009
+udp_port = 9010
+secret = "replace-with-a-long-random-secret"
+tcp_connections = 2
+# 每台服务器可单独覆盖 udp_interval、tcp_interval、udp_timeout、
+# tcp_timeout、reconnect_interval。
